@@ -2,6 +2,8 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Login from '../components/Login.vue'
 import Home from '../components/Home.vue'
+import Welcome from '../components/Welcome.vue'
+import Users from '../components/user/Users.vue'
 
 Vue.use(Router)
 
@@ -17,8 +19,19 @@ const router = new Router({
     },
     {
       path: '/home',
-      component: Home
-    }
+      component: Home,
+      redirect: '/welcome',
+      children: [
+        {
+          path: '/welcome',
+          component: Welcome
+        },
+        {
+          path: '/users',
+          component: Users
+        }
+      ]
+    },
   ],
   mode: 'history'   //注意这个必写，不然页面加载不出来
 })
