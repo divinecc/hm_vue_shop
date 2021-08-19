@@ -27,7 +27,8 @@ import {
   Tag,
   Tree,
   Select,
-  Option
+  Option,
+  Cascader
 } from 'element-ui'
 //Message是弹框提示组件
 
@@ -57,6 +58,8 @@ Vue.use(Tag)
 Vue.use(Tree)
 Vue.use(Select)
 Vue.use(Option)
+Vue.use(Cascader)
+
 
 
 Vue.prototype.$message = Message  //注意这个message需要全局挂载，这样每一个组件都可以通过this来访问$message, 里面有error和success两种方法来提示成功或者失败
